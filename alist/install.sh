@@ -41,7 +41,7 @@ get_fw_type() {
 platform_test(){
 	local LINUX_VER=$(uname -r|awk -F"." '{print $1$2}')
 	local ARCH=$(uname -m)
-	if [ -d "/koolshare" -a -f "/usr/bin/skipd" -a "${LINUX_VER}" -ge "41" ];then
+	if [ -d "/koolshare" -a -f "/usr/bin/skipd" -a "${LINUX_VER}" -eq "26" ];then
 		echo_date 机型："${MODEL} ${FW_TYPE_NAME} 符合安装要求，开始安装插件！"
 	else
 		exit_install 1
